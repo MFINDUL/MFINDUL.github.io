@@ -101,13 +101,13 @@
                 document.querySelector('.cals p').innerHTML = '가격 : '+ dap; 
             }
             async function init() {
-                let res = await fetch('./images/store.json')
+                let res = await fetch('store.json')
                 let data = await res.json();
                 let titlearray = []
                 array = data.products;
                 array.forEach(function(el,i){
                     console.log(el)
-                    let sameyoso = `<div class="card"><img src="images/pr${i+1}.JPG" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">${el.title}</h5><p class="card-text">${el.brand}</p><p class="card-text">가격 : ${el.price}</p><a href="#" class="btn btn-primary">담기</a></div></div>`
+                    let sameyoso = `<div class="card"><img src="pr${i+1}.JPG" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">${el.title}</h5><p class="card-text">${el.brand}</p><p class="card-text">가격 : ${el.price}</p><a href="#" class="btn btn-primary">담기</a></div></div>`
                     titlearray.push(el.title)
                     document.querySelector('.mainview').insertAdjacentHTML('beforeend',sameyoso);
                         })    
@@ -227,5 +227,6 @@
         
         </body>
 </html> 
+
 
 
